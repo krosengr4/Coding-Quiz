@@ -35,6 +35,15 @@ const questions = [
             { text: "A popular CSS framework for developing responsive and mobile-first websites", correct: false},
             { text: "All of the above", correct: false},
         ]
+    } ,
+    {
+        question: "Q5. Who invented Javascript?",
+        answers: [
+            { text: "Mike Sheridan", correct: false},
+            { text: "Bjarne Stroustrup", correct: false},
+            { text: "Brendan Eich", correct: true},
+            { text: "Leo Baekeland", correct: false},
+        ]
     }
 ]; 
 
@@ -214,6 +223,17 @@ function saveScore() {
     
     console.log(results);
 
+    if (userScores.length===0){
+        console.log("no scores:");
+        var createTableRow = document.createElement('tr');
+        var tableData = document.createElement('td');
+        var link = document.createElement('p');
+        link.textContent = "No saved scores.";
+        tableData.appendChild(link);
+        createTableRow.appendChild(tableData);
+        results.appendChild(createTableRow);
+    }
+
     for (i=0; i < userScores.length; i++){
         let highResults = userInitials[i] + '   |   ' + userScores[i];
 
@@ -252,6 +272,12 @@ function displayHighScores() {
 };
 
 console.log(displayHighScores, 'scores');
+
+// quiz
+//scoreButton.addEventListener('click', displayHighScores);
+scoreButton.addEventListener('click', saveScore);
+
+
 
 startQuiz(); // <--- When page is opened, this function will run automatically.
 
