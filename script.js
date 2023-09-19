@@ -100,6 +100,7 @@ function showQuestion() {
 }
 
 function stopQuiz() {
+    clearInterval(timervar);
     console.log("stop test");
 }
 
