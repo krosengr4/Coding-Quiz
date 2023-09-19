@@ -12,4 +12,4 @@ The user will also be able to view the highscores page at any time by clicking t
 After the highscore page the user can restart the quiz if they would like. If user selects restart, the timer starts over at 60 seconds and the user can give it another go!
 
 # Bugs 
-If the user doesn't complete the quiz, the timer will continue to decrease after 0 and into negative numbers.
+If the user doesn't complete the quiz, after selecting "display scores", the timer will continue to decrease after 0 and into negative numbers.
