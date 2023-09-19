@@ -1,4 +1,4 @@
-// The four questions that are displayed throughout the quiz. Stored in an array.
+// A set of questions that are displayed throughout the quiz. Stored in an array.
 const questions = [
     {
         question: "Q1. What is a function?",
