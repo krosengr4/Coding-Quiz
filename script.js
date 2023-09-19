@@ -113,10 +113,9 @@ function timer() {
         stopQuiz();
     }
 
+    timeLeft -=1;
     timer1.value = timeLeft;
     timer2.innerHTML = timeLeft + " seconds";
-
-    timeLeft -=1;
     }, 1000)
 }
  
@@ -182,8 +181,6 @@ function showScore(){
 
 function handleNextButton(){
     if (currentQuestionIndex === -1) {
-
-        console.log('[p[pe');
         resetAfterScores();
         nextButton.innerHTML = "Next";  
         nextButton.style.display = "block";
@@ -217,6 +214,7 @@ var userInitials = [];
 function saveScore() {
     console.log("In save score");
     resetState();
+    clearInterval(timervar);
     questionElement.innerHTML = 'High Scores'
     userInitials.unshift(inputBox.value);
     console.log(userInitials);
@@ -258,23 +256,6 @@ function saveScore() {
 };
 
 
-
-
-
-scoreButton.addEventListener('click', displayHighScores);
-
-function displayHighScores() {
-    score = timeLeft;
-    
-    
-    console.log('u clicked', scoreButton);
-
-};
-
-console.log(displayHighScores, 'scores');
-
-// quiz
-//scoreButton.addEventListener('click', displayHighScores);
 scoreButton.addEventListener('click', saveScore);
 
 
