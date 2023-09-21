@@ -1,4 +1,4 @@
-### Description of Application
+# Description of Application
 In the coding quiz, a user can take a short quiz on coding. 
 When the page is opened, the user is given 60 seconds to answer 4 multiple choice questions.
 When the user answers each questions and click next, they will move onto the next question.
@@ -11,4 +11,7 @@ The user will also be able to view the highscores page at any time by clicking t
 
 After the highscore page the user can restart the quiz if they would like. If user selects restart, the timer starts over at 60 seconds and the user can give it another go!
 
+
+# Link for Deployed Application:
+https://krosengr4.github.io/Coding-Quiz/
 
