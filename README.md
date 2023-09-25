@@ -13,7 +13,7 @@ After the highscore page the user can restart the quiz if they would like. If us
 
 
 # Link for Deployed Application:
-https://krosengr4.github.io/Coding-Quiz/
+[Deployed Application](https://krosengr4.github.io/Coding-Quiz/)
 
 # Pictures of Application
 ![image](https://github.com/krosengr4/Coding-Quiz/assets/139993281/f89a846a-f433-4a07-bc3e-090cfb371690)
