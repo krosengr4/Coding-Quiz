@@ -1,4 +1,4 @@
-# Description of Application
+# My Coding Quiz
 In the coding quiz, a user can take a short quiz on coding. 
 When the page is opened, the user is given 60 seconds to answer 4 multiple choice questions.
 When the user answers each questions and click next, they will move onto the next question.
