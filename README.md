@@ -12,8 +12,8 @@ The user will also be able to view the highscores page at any time by clicking t
 After the highscore page the user can restart the quiz if they would like. If user selects restart, the timer starts over at 60 seconds and the user can give it another go!
 
 
-# Link for Deployed Application:
-[Deployed Application](https://krosengr4.github.io/Coding-Quiz/)
+# Deployed Application:
+[Click here for the Deployed Application!](https://krosengr4.github.io/Coding-Quiz/)
 
 # Pictures of Application
 ![image](https://github.com/krosengr4/Coding-Quiz/assets/139993281/f89a846a-f433-4a07-bc3e-090cfb371690)
