@@ -55,6 +55,7 @@ const scoreButton = document.getElementById("highScore");
 const answer = document.getElementById("answer");
 const timer1 = document.getElementById("timer1");
 const timer2 = document.getElementById("timer2");
+var startButton = document.getElementById("start-quiz");
 var timervar;
 
 console.log(answer);
@@ -64,30 +65,31 @@ console.log(scoreButton);
 let currentQuestionIndex = 0;
 let score = 0;
 
-var timeAllowed = 60;
+const timeAllowed = 60;
 var timeLeft = timeAllowed;
 let highScore = 0;
+const timePenalty = 3;
 
 // Function that displays a start page when the page is opened. Will show a start quiz button.
 function startPage (){
-
     answerButtons.style.display = "none";
-    nextButton.innerHTML = "Start Quiz";
-    
+    startButton.style.display = "block";
+    questionElement.innerHTML = "Code Quiz: "+"\n"+ "You will get "+timeAllowed+" seconds to answer "+questions.length+ " questions. At the end, your score will be the time remaining, but be careful! If you answer wrong "+timePenalty+ " seconds will be removed."
 
-    //nextButton.addEventListener('click', startQuiz());
-    console.log(nextButton)
-    nextButton.style.display = "block";
+    startButton.addEventListener('click', startQuiz);
 };
 
 // Function that is run after the page is opened. Calls timer and showQuestion functions.
-function startQuiz(){
+function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
+    startButton.style.display = "none";
+    answerButtons.style.display = "block";
     timer();
     showQuestion(); 
 };
+
 // Code to display the questions 
 function showQuestion() {
     resetState();
@@ -131,7 +133,6 @@ function timer() {
     }, 1000)
 };
  
-
 function resetState(){
     nextButton.style.display = "none";
     while(answerButtons.firstChild){
@@ -190,7 +191,6 @@ function showScore(){
     console.log(userScores);
 };
 
-
 function handleNextButton(){
     if (currentQuestionIndex === -1) {
         resetAfterScores();
@@ -208,7 +208,6 @@ function handleNextButton(){
     answer.innerHTML = "";
 }
 
-
 nextButton.addEventListener("click", ()=>{
     if (currentQuestionIndex < questions.length){
         handleNextButton();
@@ -218,10 +217,8 @@ nextButton.addEventListener("click", ()=>{
     }
 });
 
-
 var userScores = [];
 var userInitials = [];
-
 
 function saveScore() {
     console.log("In save score");
@@ -260,18 +257,10 @@ function saveScore() {
         createTableRow.appendChild(tableData);
         results.appendChild(createTableRow);
     };
-
-        
         nextButton.innerHTML = "Restart";  
         nextButton.style.display = "block";
         currentQuestionIndex = -1;
 };
 
-
 scoreButton.addEventListener('click', saveScore);
-
-
-
- startQuiz(); // <--- When page is opened, this function will run automatically.
-// startPage();
-
+ startPage(); //<--- startPage function runs when page is opened. 
