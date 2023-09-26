@@ -68,6 +68,17 @@ var timeAllowed = 60;
 var timeLeft = timeAllowed;
 let highScore = 0;
 
+// Function that displays a start page when the page is opened. Will show a start quiz button.
+function startPage (){
+
+    answerButtons.style.display = "none";
+    nextButton.innerHTML = "Start Quiz";
+    
+
+    //nextButton.addEventListener('click', startQuiz());
+    console.log(nextButton)
+    nextButton.style.display = "block";
+};
 
 // Function that is run after the page is opened. Calls timer and showQuestion functions.
 function startQuiz(){
@@ -76,7 +87,7 @@ function startQuiz(){
     nextButton.innerHTML = "Next";
     timer();
     showQuestion(); 
-}
+};
 // Code to display the questions 
 function showQuestion() {
     resetState();
@@ -97,12 +108,12 @@ function showQuestion() {
         button.addEventListener("click", selectAnswer);
         console.log("after select answer");
     });
-}
+};
 
 function stopQuiz() {
     clearInterval(timervar);
     console.log("stop test");
-}
+};
 
 // Function to make the timer work.
 function timer() {
@@ -112,13 +123,13 @@ function timer() {
     if (timeLeft<=0) {
         clearInterval(timervar);
         stopQuiz();
-    }
+    };
 
     timeLeft -=1;
     timer1.value = timeLeft;
     timer2.innerHTML = timeLeft + " seconds";
     }, 1000)
-}
+};
  
 
 function resetState(){
@@ -133,7 +144,7 @@ function resetAfterScores(){
     while(results.firstChild){
         results.removeChild(results.firstChild);
     }
-}
+};
 
 // Function to determine wether user answer is correct or incorrect. 
 function selectAnswer (e){
@@ -158,7 +169,7 @@ function selectAnswer (e){
         button.disabled = true;
     });
     nextButton.style.display = "block";
-}
+};
 
 let inputBox = "KR";
 
@@ -261,5 +272,6 @@ scoreButton.addEventListener('click', saveScore);
 
 
 
-startQuiz(); // <--- When page is opened, this function will run automatically.
+ startQuiz(); // <--- When page is opened, this function will run automatically.
+// startPage();
 
