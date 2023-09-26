@@ -19,7 +19,6 @@
 
 # Pictures of Application
 ![image](https://github.com/krosengr4/Coding-Quiz/assets/139993281/19efc0ea-8d0e-4159-95b7-83745a50fd4f)
-![image](https://github.com/krosengr4/Coding-Quiz/assets/139993281/f89a846a-f433-4a07-bc3e-090cfb371690)
 ![image](https://github.com/krosengr4/Coding-Quiz/assets/139993281/57501334-48c3-45e2-bbb7-674787bc2d35)
 ![image](https://github.com/krosengr4/Coding-Quiz/assets/139993281/1635d4f7-d74e-4362-8a85-f3d54f2affca)
 
