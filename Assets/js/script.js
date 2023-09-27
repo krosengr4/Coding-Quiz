@@ -114,6 +114,8 @@ function showQuestion() {
 
 function stopQuiz() {
     clearInterval(timervar);
+    currentQuestionIndex = questions.length+1;
+    showScore();
     console.log("stop test");
 };
 
@@ -125,6 +127,7 @@ function timer() {
     if (timeLeft<=0) {
         clearInterval(timervar);
         stopQuiz();
+        timeLeft = 1;
     };
 
     timeLeft -=1;
@@ -224,6 +227,7 @@ function saveScore() {
     console.log("In save score");
     resetState();
     clearInterval(timervar);
+    answer.innerHTML='';
     questionElement.innerHTML = 'High Scores'
     userInitials.unshift(inputBox.value);
     console.log(userInitials);
