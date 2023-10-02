@@ -74,7 +74,7 @@ const timePenalty = 3;
 function startPage (){
     answerButtons.style.display = "none";
     startButton.style.display = "block";
-    questionElement.innerHTML = "Code Quiz: "+"\n"+ "You will get "+timeAllowed+" seconds to answer "+questions.length+ " questions. At the end, your score will be the time remaining, but be careful! If you answer wrong "+timePenalty+ " seconds will be removed."
+    questionElement.innerHTML = "Code Quiz: "+"<hr><br><h4>"+ "You will get "+timeAllowed+" seconds to answer "+questions.length+ " questions. At the end, your score will be the time remaining, but be careful! If you answer wrong "+timePenalty+ " seconds will be removed.</h4>"
 
     startButton.addEventListener('click', startQuiz);
 };
@@ -188,7 +188,8 @@ function showScore(){
 
     nextButton.innerHTML = "Submit"; 
     nextButton.style.display = "block";
-    userScores.unshift(timeLeft);
+    score = timeLeft;
+    console.log(score, timeLeft,timervar);
     clearInterval(timervar);
 
     console.log(userScores);
@@ -220,8 +221,15 @@ nextButton.addEventListener("click", ()=>{
     }
 });
 
+const localStorageScores = "quizScores";
+const localStorageInitials = "quizInitials";
 var userScores = [];
 var userInitials = [];
+if (localStorage.getItem("quizScores")){
+    userScores = JSON.parse(localStorage.getItem(localStorageScores));
+    userInitials = JSON.parse(localStorage.getItem(localStorageInitials));
+    console.log(userScores);
+}
 
 function saveScore() {
     console.log("In save score");
@@ -229,11 +237,22 @@ function saveScore() {
     clearInterval(timervar);
     answer.innerHTML='';
     questionElement.innerHTML = 'High Scores'
-    userInitials.unshift(inputBox.value);
-    console.log(userInitials);
+    console.log(inputBox.value);
+    if (inputBox.value){
+        userInitials.unshift(inputBox.value);
+        userScores.unshift(score);
+        localStorage.setItem(localStorageScores,JSON.stringify(userScores));
+        localStorage.setItem(localStorageInitials,JSON.stringify(userInitials));
+        console.log(userInitials);
+        inputBox.value = null;
+    }
     
     console.log(results);
-
+    // Delete text before adding new
+    while(results.firstChild){
+       // console.log("remove child loop");
+        results.removeChild(results.firstChild);
+    };
     if (userScores.length===0){
         console.log("no scores:");
         var createTableRow = document.createElement('tr');

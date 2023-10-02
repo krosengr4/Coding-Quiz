@@ -30,6 +30,13 @@ body{
     color: #6f809c;
     font-weight: 600;
 }
+
+.app h4{
+    font-size: 20px;
+    /* color: #6f809c; */
+    font-weight: 600;
+}
+
 .quiz h2{
     font-size: 18px;
     color: #001e4d;
